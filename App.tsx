@@ -5,6 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import Home from './src/screens/Home';
+import Gallery from './src/screens/Gallery';
 import AttractionDetails from './src/screens/AttractionDetails';
 
 const Stack = createStackNavigator();
@@ -17,6 +18,7 @@ function App() {
          <Stack.Navigator screenOptions={{headerShown: false}}>
            <Stack.Screen component={Home} name="Home"  />
            <Stack.Screen component={AttractionDetails} name="AttractionDetails"  />
+           <Stack.Screen component={Gallery} name="Gallery"  />
          </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>
