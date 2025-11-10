@@ -7,10 +7,17 @@ import styles from './styles';
 
 const ALL = 'All';
 
-const AttractionDetails = () => {
+const AttractionDetails = ({navigation, route}) => {
+    const {item} = route?.params || {};
+
+    const onBack = () => {
+        navigation.goBack();
+    };
+
     return (
         <SafeAreaView style={styles.container}>
-            <Text>AttractionDetails</Text>
+            <Text onPress={onBack} style={{margin: 32}}>BACK</Text>
+            <Text>{item?.name}</Text>
         </SafeAreaView>
     );
 };

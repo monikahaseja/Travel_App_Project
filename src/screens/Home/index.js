@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { FlatList, SafeAreaView, Text, View } from 'react-native';
+import { FlatList, Text, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import AttractionCard from '../../components/AttractionCard';
 import Categories from '../../components/Categories';
 import Title from '../../components/Title';
@@ -63,7 +64,7 @@ const Home = () => {
                         title={item.name}
                         subtitle={item.city}
                         imageSrc={item.images?.length ? item.images[0] : null}
-                        onPress={() => navigation.navigate('AttractionDetails')}
+                        onPress={() => navigation.navigate('AttractionDetails', { item })}
                     />
                 )}
             />
